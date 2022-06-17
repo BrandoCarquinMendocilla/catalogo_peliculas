@@ -1,0 +1,27 @@
+package com.catalogo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.catalogo.PelisCatalogoApplication;
+import com.catalogo.model.Response;
+
+
+@Controller
+@RequestMapping("/")
+public class HomeController {
+	PelisCatalogoApplication restTemplate = new PelisCatalogoApplication();
+	
+	@GetMapping("")
+	public String Home(Model model) {
+		
+		
+		Quote quote = restTemplate.getForObject(
+				"https://swapi.dev/api/films/", Response.class);
+		
+		
+		return "index";
+	}
+}

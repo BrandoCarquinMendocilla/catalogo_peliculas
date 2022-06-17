@@ -1,0 +1,34 @@
+package com.catalogo.controller;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
+
+import com.catalogo.PelisCatalogoApplication;
+import com.catalogo.model.Response;
+
+
+@Controller
+@RequestMapping("/")
+public class HomeController {
+	RestTemplate restTemplate = new RestTemplate();
+	
+	@GetMapping("")
+	public String Home(Model model) {
+		
+		ResponseEntity<Response> response = restTemplate.getForEntity("https://swapi.dev/api/films/", Response.class);
+		Response r = response.getBody();
+		model.addAttribute("peliculas",r.getResults());
+		System.out.println(r);
+		
+		return "index";
+	}
+	
+	
+}

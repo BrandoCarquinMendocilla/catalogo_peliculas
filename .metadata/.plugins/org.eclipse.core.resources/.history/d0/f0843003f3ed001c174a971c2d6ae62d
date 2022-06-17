@@ -1,0 +1,5 @@
+package com.catalogo.model;
+
+public class Detalle {
+
+}

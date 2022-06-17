@@ -1,0 +1,17 @@
+package com.catalogo.consumedApi;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class ConsumeApi {
+	public static void main(String[] args) {
+		try {
+			URL url = new URL("https://swapi.dev/api/films/");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.connect();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

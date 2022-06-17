@@ -1,0 +1,26 @@
+package com.catalogo.consumedApi;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+public class ConsumeApi {
+	public static void main(String[] args) {
+		try {
+			URL url = new URL("https://swapi.dev/api/films/");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.connect();
+			
+			int responseCode = conn.getResponseCode();
+			if(responseCode!=200) {
+				throw new RuntimeException("Ocurrio un error "+ responseCode);
+			}else {
+				StringBuilder informacion= new StringBuilder(); 
+				Scanner scanner = new Scanner(url.openStream());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

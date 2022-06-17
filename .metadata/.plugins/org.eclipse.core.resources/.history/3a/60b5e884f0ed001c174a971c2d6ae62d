@@ -1,0 +1,7 @@
+package com.catalogo.consumedApi;
+
+import java.net.URL;
+
+public class ConsumeApi {
+	URL url = new URL("https://swapi.dev/api/films/");
+}
