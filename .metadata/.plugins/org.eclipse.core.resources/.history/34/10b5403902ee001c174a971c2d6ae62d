@@ -33,7 +33,7 @@
 		<h1>Pelicula</h1>
 		<hr>
 		<div style="display: flex; flex-grow: initial;">
-			<h3 style="padding-right: 30px; " th:text="${detalle.title}"></h3>
+			<h3 style="padding-right: 30px; " th:text="${detalle.title}">Detalle: </h3>
 		</div><br>
 		<!-- Creacion de las tablas productos con Boostrap -->
 		<div class="container">

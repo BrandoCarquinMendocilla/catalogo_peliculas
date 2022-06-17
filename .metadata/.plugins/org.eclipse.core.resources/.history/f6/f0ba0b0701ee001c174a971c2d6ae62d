@@ -38,30 +38,25 @@
 		<!-- Creacion de las tablas productos con Boostrap -->
 		<div class="container">
 			<div class="row">
-				<h4 class="col-sm-12 col-md-3">Episodio:</h4>
-				<div class="col-sm-12 col-md-9" th:text="${detalle.episode_id}"></div>
+				<div class="col-md-3 col-xs-12">Sinopsis</div>
+				<div class="col-md-9 col-xs-12" th:text="${detalle.opening_crawl}"></div>
 			</div>
-			<br><br>
+			<br>
 			<div class="row">
-				<h4 class="col-sm-12 col-md-3">Sinopsis:</h4>
-				<div class="col-sm-12 col-md-9" th:text="${detalle.opening_crawl}"></div>
-			</div>
-			<br><br>
-			<div class="row">
-				<h4 class="col-3 col-xs-12">Productor:</h4>
+				<div class="col-3 col-xs-12">Productor</div>
 				<div class="col-9 col-xs-12" th:text="${detalle.producer}"></div>
 			</div>
-			<br><br>
+			<br>
 			<div class="row">
-				<h4 class="col-3 col-xs-12">Fecha de creación:</h4>
+				<div class="col-3 col-xs-12">Fecha de creación</div>
 				<div class="col-9 col-xs-12" th:text="${detalle.release_date}"></div>
 			</div>
-			<br><br>
-
+			<br>
+		
 		</div>
-
+		
 	</div>
-
+	
 	<div class="container">
 		<br>
 		<hr>
